@@ -21,6 +21,7 @@ public class StringOperationResource {
     @Timed
     @Path("/ping")
     public String sayOk() {
+        logger.info("Received a ping ...");
         return "OK";
     }
 
@@ -37,7 +38,6 @@ public class StringOperationResource {
             logger.info("Blank String provided.");
             return str;
         }
-
         String reversedString= new StringBuilder(str).reverse().toString();
         logger.info("Reversed string : "+ reversedString +" for the orginal string : " +str);
 
@@ -57,7 +57,6 @@ public class StringOperationResource {
             logger.info("Blank String provided.");
            return str;
         }
-
         String sentence= new StringBuilder(str).toString();
         String[] words = sentence.split(" ");
         StringBuilder stringBuilder =new StringBuilder();
